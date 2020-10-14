@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link para iconos-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--link para MATERIALIZE en CSS-->
+    <link rel="stylesheet" href="../CSS/materialize.css">
+    <title>FACTURA DE VENTA</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">EMPRESA------</h1>
+
+        <!--redireccion al documento de PHP-->
+        <form action="FactutaVenta.php" method="POST">
+            
+            <!--Formulario de la Factura-->
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="">FACTURA DE VENTA N°</label>
+                    <input type="number" name="Id_Venta" id="">
+                </div>
+                <div class="input-field col s6">
+                    <label for="">FECHA DE VENTA</label>
+                    <input type="date" name="Fecha" id="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="">Cliente</label>
+                    <input type="text" name="Nombre">
+                </div>
+                <div class="input-field col s6">
+                    <label for="">Codigo</label>
+                    <input type="number" name="Id_Cliente" id="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s4">
+                    <label for="">Direccion</label>
+                    <input type="text" name="Direccion">
+                </div>
+                <div class="input-field col s4">
+                    <label for="">Documento</label>
+                    <input type="text" name="Documento">
+                </div> 
+                <div class="input-field col s4">
+                    <label for="">Celular</label>
+                    <input type="text" name="Celular">
+                </div>
+            </div>
+
+            <div class="row">
+                
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <!--redireccion utilizada para conectar los scripts que nos binda el framework de MATERIALIZE-->
+    <script type="text/javascript" src="../JS/materialize.js"></script>
+</body>
+</html>
