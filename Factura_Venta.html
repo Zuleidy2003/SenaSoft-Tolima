@@ -11,17 +11,17 @@
 </head>
 <body>
     <div class="container">
-        <h1 style="text-align: center;">EMPRESA------</h1>
+        <h2 style="text-align: center;">Formulario Factura</h2>
 
         <!--redireccion al documento de PHP-->
-        <form action="FactutaVenta.php" method="POST">
+        <form action="guardar.php" method="POST">
             
             <!--Formulario de la Factura-->
             <div class="row">
-                <div class="input-field col s6">
+                <!--<div class="input-field col s6">
                     <label for="">FACTURA DE VENTA N°</label>
-                    <input type="number" name="Id_Venta" id="">
-                </div>
+                    <input type="number" name="Id_FacturaV" id="">
+                </div>-->
                 <div class="input-field col s6">
                     <label for="">FECHA DE VENTA</label>
                     <input type="date" name="Fecha" id="">
@@ -29,11 +29,15 @@
             </div>
 
             <div class="row">
-                <div class="input-field col s6">
-                    <label for="">Cliente</label>
+                <div class="input-field col s5">
+                    <label for="">Nombre Cliente</label>
                     <input type="text" name="Nombre">
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s5">
+                    <label for="">Apellidos</label>
+                    <input type="text" name="Apellidos">
+                </div>
+                <div class="input-field col s2">
                     <label for="">Codigo</label>
                     <input type="number" name="Id_Cliente" id="">
                 </div>
@@ -55,7 +59,127 @@
             </div>
 
             <div class="row">
-                
+                <div class="input-field col s8">
+                    <label for="">Vendedor</label>
+                    <input type="text" name="Nombre" id="">
+                </div>
+                <div class="input-field col s4">
+                    <label for="">Codigo</label>
+                    <input type="number" name="Id_Empleado" id="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8">
+                    <label for="">Tienda</label>
+                    <input type="text" name="Nombre" id="">
+                </div>
+                <div class="input-field col s4">
+                    <label for="">Codigo</label>
+                    <input type="number" name="Id_Tienda" id="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s1">
+                    <label for="">Codigo</label>
+                    <input type="number" name="Id_Producto" id="">
+                    <input type="number" name="Id_Producto" id="">
+                    <input type="number" name="Id_Producto" id="">
+                    <input type="number" name="Id_Producto" id="">
+                    <input type="number" name="Id_Producto" id="">
+                    <input type="number" name="Id_Producto" id="">
+                </div>
+
+                <div class="input-field col s5">
+                    <label for="">Producto</label>
+                    <input type="text" name="Nombre" id="">
+                    <input type="text" name="Nombre" id="">
+                    <input type="text" name="Nombre" id="">
+                    <input type="text" name="Nombre" id="">
+                    <input type="text" name="Nombre" id="">
+                    <input type="text" name="Nombre" id="">
+                </div>
+
+                <div class="input-field col s1">
+                    <label for="">Cant</label>
+                    <input type="number" name="Cantidad" id="">
+                    <input type="number" name="Cantidad" id="">
+                    <input type="number" name="Cantidad" id="">
+                    <input type="number" name="Cantidad" id="">
+                    <input type="number" name="Cantidad" id="">
+                    <input type="number" name="Cantidad" id="">
+                </div>
+
+                <div class="input-field col s1">
+                    <label for="">IVA</label>
+                    <input type="number" name="Impuesto" id="">
+                    <input type="number" name="Impuesto" id="">
+                    <input type="number" name="Impuesto" id="">
+                    <input type="number" name="Impuesto" id="">
+                    <input type="number" name="Impuesto" id="">
+                    <input type="number" name="Impuesto" id="">
+                </div>
+
+                <div class="input-field col s2">
+                    <label for="">v/unidad</label>
+                    <input type="number" name="Valor_Uni" id="">
+                    <input type="number" name="Valor_Uni" id="">
+                    <input type="number" name="Valor_Uni" id="">
+                    <input type="number" name="Valor_Uni" id="">
+                    <input type="number" name="Valor_Uni" id="">
+                    <input type="number" name="Valor_Uni" id="">
+                </div>
+
+                <div class="input-field col s2">
+                    <label for="">v/t</label>
+                    <input type="number" name="Valor_Tot" id="">
+                    <input type="number" name="Valor_Tot" id="">
+                    <input type="number" name="Valor_Tot" id="">
+                    <input type="number" name="Valor_Tot" id="">
+                    <input type="number" name="Valor_Tot" id="">
+                    <input type="number" name="Valor_Tot" id="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="">EL CLIENTE PAGO:</label>
+                    <input type="number" name="Pago" id="">
+                </div>
+                <div class="input-field col s6">
+                    <label for="">TOTAL A PAGAR</label>
+                    <input type="number" name="Total" id="">
+                </div>
+            </div>
+
+            
+            <div style="text-align: center;">
+                <a onclick="Devolucion('<?php echo $empleado->Id; ?>');"><i class="material-icons">attach_money DEVUELTAS</i></a>
+                <script>
+                    function Devolucion(id){
+                        validar = confirm("Debe devoler al cliente $");
+                        if (validar==true) {
+                            location.href = "Fv_Generada.php?id=" + id;
+                        }else{
+                            alert("El registro no se eliminara");
+                        }
+                    }
+                </script>
+            </div>
+
+            <div>
+               
+               
+                <!--<script>
+                    alert("Debe devoler al cliente $")
+                </script>
+                <script>
+                    pago ="<?php ?>"
+                    validar=confirm("Debe dar")
+                    if()
+                     alert("El registro no se eliminara");
+                </script>-->
             </div>
 
         </form>
