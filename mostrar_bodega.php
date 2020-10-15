@@ -15,43 +15,34 @@ try {
     echo("Tenemos un error") . $error->Message();
 }
 
-$sql = "SELECT * FROM producto";
+$sql = "SELECT * FROM bodegas";
 
 $guardar = $conexion->prepare($sql);
 $guardar->execute();
 
-$objetoproducto = $guardar->fetchAll(PDO::FETCH_OBJ);
+$objetobodega = $guardar->fetchAll(PDO::FETCH_OBJ);
 ?>
 <div class="container">
-    <h4>Registro de productos</h4>
+    <h4>Registro de Bodegas</h4>
     <table>
         <thead>
             <tr>
                 <th>Clave</th>
                 <th>Nombre</th>
-                <th>Marca</th>
-                <th>Longitud</th>
-                <th>Cantidad</th>
-                <th>Precio Compra</th>
-                <th>Precio Venta</th>
-                <th>Impuesto</th>
-                <th>clave del proveedor</th>
+                <th>Celular</th>
+                <th>Telefono</th>
+                <th>Clave de Producto</th>
                 <th>Opciones</th>
             </tr>
-        </thead>
-
+        </thead>	
         <tbody>
-        <?php foreach($objetoproducto as $producto) { ?>
+        <?php foreach($objetobodega as $bodega) { ?>
             <tr>
-                <th><?php echo $producto->Id_Producto; ?></th>
-                <th><?php echo $producto->Nombre; ?></th>
-                <th><?php echo $producto->Marca; ?></th>
-                <th><?php echo $producto->Longitud; ?></th>
-                <th><?php echo $producto->Cantidad_Existencia; ?></th>
-                <th><?php echo $producto->Precio_Compra; ?></th>
-                <th><?php echo $producto->Precio_Venta; ?></th>
-                <th><?php echo $producto->Impuesto; ?></th>
-                <th><?php echo $producto->Id_Proveedor; ?></th>
+                <th><?php echo $bodega->Id_Bodega; ?></th>
+                <th><?php echo $bodega->Nombre; ?></th>
+                <th><?php echo $bodega->Celular; ?></th>
+                <th><?php echo $bodega->Telefono; ?></th>
+                <th><?php echo $bodega->Id_Producto; ?></th>
                 <th>
                     <a href=""><i class="material-icons">edit</i></a>
                     <a href=""><i class="material-icons">delete</i></a>
@@ -60,11 +51,6 @@ $objetoproducto = $guardar->fetchAll(PDO::FETCH_OBJ);
             </tr>
         <?php } ?>
         </tbody>
-    </table>
-    <table>
-            <tr>
-                <th><a href="registrar_producto.php">CREAR NUEVO PRODUCTO</a></th>
-            </tr>
     </table>
 <br><br>
 

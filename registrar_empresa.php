@@ -35,7 +35,12 @@
 
         <div class="input-field col s4">
             <label for="">Pais</label>
-            <input type="text" name="pais_empresa"required>
+            <input type="text" name="pais_empresa" required>
+        </div>
+        <div class="input-field col s7">
+            <label for="">Digite El Numero cerial de su Bodega</label>
+            <input type="number" name="bodega" required>
+            <h6 style="font-size: 15px;">Para registrar tu bodega has <a href="registrar_bodega.php">CLICK AQUI</a></h6>
         </div>
 <br><br>
         <div class="input-field col s7">
@@ -45,13 +50,9 @@
 
         <div class="input-field col s7">
             <label for="">Cree una contraseña</label>
-            <input type="text" name="contrasena_empresa" required>
+            <input type="password" name="contrasena_empresa" required>
         </div>
 
-        <div class="input-field col s7">
-            <label for="">Confirme su contraseña</label>
-            <input type="text" naeme="c_contrasenaempresa"required>
-        </div>
 
             <button class="waves-effect waves-light btn-small" type="submit" name="Registrar" style="margin-left: 40%;">Registrar<i class="material-icons right">done_all</i></button>
     </form>

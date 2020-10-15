@@ -15,43 +15,40 @@ try {
     echo("Tenemos un error") . $error->Message();
 }
 
-$sql = "SELECT * FROM producto";
+$sql = "SELECT * FROM empresa";
 
 $guardar = $conexion->prepare($sql);
 $guardar->execute();
 
-$objetoproducto = $guardar->fetchAll(PDO::FETCH_OBJ);
+$objetoempresa = $guardar->fetchAll(PDO::FETCH_OBJ);
 ?>
 <div class="container">
-    <h4>Registro de productos</h4>
+    <h4>Registro de Empresas</h4>
     <table>
         <thead>
             <tr>
                 <th>Clave</th>
                 <th>Nombre</th>
-                <th>Marca</th>
-                <th>Longitud</th>
-                <th>Cantidad</th>
-                <th>Precio Compra</th>
-                <th>Precio Venta</th>
-                <th>Impuesto</th>
-                <th>clave del proveedor</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Nit</th>
+                <th>Pais</th>
+                <th>Tipo de empresa</th>
+                <th>Bodega</th>
                 <th>Opciones</th>
             </tr>
-        </thead>
-
+        </thead>	
         <tbody>
-        <?php foreach($objetoproducto as $producto) { ?>
+        <?php foreach($objetoempresa as $empresa) { ?>
             <tr>
-                <th><?php echo $producto->Id_Producto; ?></th>
-                <th><?php echo $producto->Nombre; ?></th>
-                <th><?php echo $producto->Marca; ?></th>
-                <th><?php echo $producto->Longitud; ?></th>
-                <th><?php echo $producto->Cantidad_Existencia; ?></th>
-                <th><?php echo $producto->Precio_Compra; ?></th>
-                <th><?php echo $producto->Precio_Venta; ?></th>
-                <th><?php echo $producto->Impuesto; ?></th>
-                <th><?php echo $producto->Id_Proveedor; ?></th>
+                <th><?php echo $empresa->Id_Empresa; ?></th>
+                <th><?php echo $empresa->Nombre; ?></th>
+                <th><?php echo $empresa->Usuario_Empresa; ?></th>
+                <th><?php echo $empresa->Email; ?></th>
+                <th><?php echo $empresa->Nit_Empresa; ?></th>
+                <th><?php echo $empresa->Pais; ?></th>
+                <th><?php echo $empresa->Tipo_Empresa; ?></th>
+                <th><?php echo $empresa->Id_Bodega; ?></th>
                 <th>
                     <a href=""><i class="material-icons">edit</i></a>
                     <a href=""><i class="material-icons">delete</i></a>
@@ -60,11 +57,6 @@ $objetoproducto = $guardar->fetchAll(PDO::FETCH_OBJ);
             </tr>
         <?php } ?>
         </tbody>
-    </table>
-    <table>
-            <tr>
-                <th><a href="registrar_producto.php">CREAR NUEVO PRODUCTO</a></th>
-            </tr>
     </table>
 <br><br>
 
