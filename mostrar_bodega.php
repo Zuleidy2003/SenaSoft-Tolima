@@ -31,7 +31,7 @@ $objetobodega = $guardar->fetchAll(PDO::FETCH_OBJ);
                 <th>Nombre</th>
                 <th>Celular</th>
                 <th>Telefono</th>
-                <th>Clave de Producto</th>
+                <th>Numero de Empresa</th>
                 <th>Opciones</th>
             </tr>
         </thead>	
@@ -42,9 +42,9 @@ $objetobodega = $guardar->fetchAll(PDO::FETCH_OBJ);
                 <th><?php echo $bodega->Nombre; ?></th>
                 <th><?php echo $bodega->Celular; ?></th>
                 <th><?php echo $bodega->Telefono; ?></th>
-                <th><?php echo $bodega->Id_Producto; ?></th>
+                <th><?php echo $bodega->Id_Empresa; ?></th>
                 <th>
-                    <a href=""><i class="material-icons">edit</i></a>
+                <a href="factualizar_bodega.php?id=<?php echo $bodega->Id_Bodega; ?>"> <i class="material-icons">edit</i> </a>
                     <a href=""><i class="material-icons">delete</i></a>
                 </th>
                 </td>

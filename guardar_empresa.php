@@ -6,9 +6,7 @@ $tipo_empresa=$_POST['tipo_empresa'];
 $pais_empresa=$_POST['pais_empresa'];
 $usuario_empresa=$_POST['usuario_empresa'];
 $contrasena_empresa=$_POST['contrasena_empresa'];
-$id_bodega=$_POST['bodega'];
 $id_empresa= 0 ;
-$id_bodega= 8 ;
 
     // se esta incriptando la contraseña
     $contrasena = password_hash($contrasena_empresa, PASSWORD_ARGON2ID);
@@ -20,7 +18,7 @@ $id_bodega= 8 ;
     }
 
 
-    $sql = "INSERT INTO empresa (Id_Empresa,Nombre,Usuario_Empresa,Contrasena_Empresa,Email,Nit_Empresa,Pais,Tipo_Empresa,Id_Bodega) VALUES (?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO empresa (Id_Empresa,Nombre,Usuario_Empresa,Contrasena_Empresa,Email,Nit_Empresa,Pais,Tipo_Empresa) VALUES (?,?,?,?,?,?,?,?)";
 
 
     $guardar = $conexion->prepare($sql);
@@ -32,7 +30,6 @@ $id_bodega= 8 ;
     $guardar->bindParam(6,$nit_empresa);
     $guardar->bindParam(7,$pais_empresa);
     $guardar->bindParam(8,$tipo_empresa);
-    $guardar->bindParam(9,$id_bodega);
     $guardar->execute();
 
     header("location: login_empresa.php");

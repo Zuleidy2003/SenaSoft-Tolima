@@ -34,7 +34,6 @@ $objetoempresa = $guardar->fetchAll(PDO::FETCH_OBJ);
                 <th>Nit</th>
                 <th>Pais</th>
                 <th>Tipo de empresa</th>
-                <th>Bodega</th>
                 <th>Opciones</th>
             </tr>
         </thead>	
@@ -48,9 +47,8 @@ $objetoempresa = $guardar->fetchAll(PDO::FETCH_OBJ);
                 <th><?php echo $empresa->Nit_Empresa; ?></th>
                 <th><?php echo $empresa->Pais; ?></th>
                 <th><?php echo $empresa->Tipo_Empresa; ?></th>
-                <th><?php echo $empresa->Id_Bodega; ?></th>
                 <th>
-                    <a href=""><i class="material-icons">edit</i></a>
+                    <a href="factualizar_empresa.php?id=<?php echo $empresa->Id_Empresa; ?>"> <i class="material-icons">edit</i> </a>
                     <a href=""><i class="material-icons">delete</i></a>
                 </th>
                 </td>

@@ -3,7 +3,7 @@
 $nombre_bodega=$_POST['nombre_bodega'];
 $celular_bodega=$_POST['celular_bodega'];
 $telefono_bodega=$_POST['telefono_bodega'];
-$id_producto=$_POST['id_producto'];
+$id_empresa=$_POST['id_empresa'];
 $id_bodega=0;
 
 
@@ -14,7 +14,7 @@ $id_bodega=0;
     }
 
 
-    $sql = "INSERT INTO bodegas (Id_Bodega,Nombre,Celular,Telefono,Id_Producto) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO bodegas (Id_Bodega,Nombre,Celular,Telefono,Id_Empresa) VALUES (?,?,?,?,?)";
 	 
 
     $guardar = $conexion->prepare($sql);
@@ -22,7 +22,7 @@ $id_bodega=0;
     $guardar->bindParam(2,$nombre_bodega);
     $guardar->bindParam(3,$celular_bodega);
     $guardar->bindParam(4,$telefono_bodega);
-    $guardar->bindParam(5,$id_producto);
+    $guardar->bindParam(5,$id_empresa);
     $guardar->execute();
 
     header("location: mostrar_bodega.php");

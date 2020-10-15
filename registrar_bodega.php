@@ -29,9 +29,8 @@
         </div>
 
         <div class="input-field col s6">
-            <label for="">Clave de Producto</label>
-            <input type="number" name="id_producto" required>
-            <a href="productos.php">Listado de productos</a>
+            <label for="">Numero de Empresa</label>
+            <input type="number" name="id_empresa" required>
         </div>
 
             <button class="waves-effect waves-light btn-small" type="submit" name="Guardar" style="margin-left: 40%;">Guardar<i class="material-icons right">done_all</i></button>
